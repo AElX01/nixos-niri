@@ -108,6 +108,7 @@
     git
     kitty
     brightnessctl
+    python3
   ];
 
   

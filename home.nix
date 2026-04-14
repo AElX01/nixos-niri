@@ -73,8 +73,8 @@
 	programs.git = {
 		enable = true;
 		settings.user = {
-			userName = "AElX01";
-			userEmail = "daniel.canul@iteso.mx";
+			name = "AElX01";
+			email = "daniel.canul@iteso.mx";
 		};	
 	};
 
