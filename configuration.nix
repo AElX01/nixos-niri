@@ -89,6 +89,15 @@
 
   programs.zsh.enable = true;
 
+  virtualisation.docker = {
+    enable = false;
+    
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
 # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.weissbier = {
     shell = pkgs.zsh;
