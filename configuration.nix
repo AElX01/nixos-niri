@@ -118,6 +118,7 @@
     kitty
     brightnessctl
     python3
+    unzip
   ];
 
   
