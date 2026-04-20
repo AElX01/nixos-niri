@@ -119,6 +119,7 @@
     brightnessctl
     python3
     unzip
+    terraform
   ];
 
   
