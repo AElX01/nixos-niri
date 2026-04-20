@@ -120,6 +120,7 @@
     python3
     unzip
     terraform
+    ranger
   ];
 
   
