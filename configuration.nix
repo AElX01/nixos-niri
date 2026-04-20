@@ -121,6 +121,8 @@
     unzip
     terraform
     ranger
+    flameshot
+    awscli2
   ];
 
   
