@@ -77,7 +77,7 @@
 			email = "daniel.canul@iteso.mx";
 		};	
 	};
-
+	
 	home.file.".config/kitty".source = ./dotfiles/kitty;
 	home.file.".config/niri".source = ./dotfiles/niri;
 	home.file.".config/cosmic".source = ./dotfiles/cosmic;
