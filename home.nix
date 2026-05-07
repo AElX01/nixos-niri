@@ -6,6 +6,7 @@
 	
 	programs.firefox = {
 		enable = true;
+		configPath = "${config.xdg.configHome}/mozilla/firefox";
 		policies = {
 			ExtensionSettings = let 
 				moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
