@@ -171,6 +171,7 @@
     proton-vpn
     file
     ollama
+    claude-code
   ];
 
   
