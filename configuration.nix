@@ -12,13 +12,32 @@
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+    
+      efi = {
+        canTouchEfiVariables = true;
+      };
+    };
+
+    enableContainers = true;
+  };
 
   # networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager = {
+      enable = true;
+    };
+
+    firewall = {
+      checkReversePath = false;
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "America/Mexico_City";
@@ -89,8 +108,6 @@
 
   programs.zsh.enable = true;
 
-  programs.virt-manager.enable = true;
-
   virtualisation = {
     docker = {
       enable = false;
@@ -101,8 +118,26 @@
       };
     };
 
-    libvirtd = {
+    containers = {
       enable = true;
+    };
+  };
+
+  containers = {
+    htb-box = {
+      config = { config, pkgs, ... }: {
+        environment.systemPackages = with pkgs; [
+          nmap 
+          openvpn 
+          metasploit
+        ];
+
+        networking = {
+          firewall = {
+            enable = false;
+          };
+        };
+      };
     };
   };
 
@@ -132,6 +167,10 @@
     ranger
     flameshot
     awscli2
+    wireguard-tools
+    proton-vpn
+    file
+    ollama
   ];
 
   
