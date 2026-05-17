@@ -65,48 +65,48 @@
 
   nixpkgs.config.allowUnfree = true;
 
-
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
-  services.displayManager.dms-greeter = {
-     enable = true;
-     compositor.name = "niri";  # Or "hyprland" or "sway"
-  };
-
-  services.upower = {
-    enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  programs.niri.enable = true;
-
-  programs.dank-material-shell = {
-    enable = true;
-    systemd = {
+  services = {
+    printing = {
       enable = true;
-      restartIfChanged = true;
     };
-};
 
-  programs.firefox.enable = true;
+    upower = {
+      enable = true;
+    };
 
-  programs.zsh.enable = true;
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+    };
+
+    displayManager = {
+      dms-greeter = {
+        enable = true;
+        compositor.name = "niri";  # Or "hyprland" or "sway"
+      };
+    };
+  };
+
+  programs = {
+    firefox = {
+      enable = true;
+    };
+
+    niri = {
+      enable = true;
+    };
+
+    dank-material-shell = {
+      enable = true;
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
+
+      zsh = {
+        enable = true;
+      };
+  };
 
   virtualisation = {
     docker = {
