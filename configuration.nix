@@ -96,16 +96,17 @@
       enable = true;
     };
 
-    dank-material-shell = {
+    dms-shell = {
       enable = true;
       systemd = {
         enable = true;
         restartIfChanged = true;
       };
+    };
 
-      zsh = {
+    zsh = {
         enable = true;
-      };
+    };
   };
 
   virtualisation = {
@@ -172,6 +173,7 @@
     file
     ollama
     claude-code
+    gh
   ];
 
   
@@ -226,4 +228,5 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
+
 
