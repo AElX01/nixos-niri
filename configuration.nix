@@ -174,6 +174,7 @@
     ollama
     claude-code
     gh
+    aider-chat
   ];
 
   
